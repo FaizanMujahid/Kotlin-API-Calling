@@ -1,9 +1,10 @@
 package com.example.kotlin_api_calling
 
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.text.method.ScrollingMovementMethod
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+
 
 class ResponseActivity :AppCompatActivity() {
 
@@ -16,5 +17,6 @@ class ResponseActivity :AppCompatActivity() {
         response.text = intent.getStringExtra("response").toString()
         requestBody.text = intent.getStringExtra("mRequestBody")
         pagetitle.text = intent.getStringExtra("title")
+        requestBody.movementMethod = ScrollingMovementMethod()
     }
 }

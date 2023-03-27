@@ -23,8 +23,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/requestBody"
         android:textSize="14sp"
+        android:maxHeight="200dp"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:scrollbars="vertical"
+        android:focusable="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusableInTouchMode="true"
+        android:scrollbarSize="12dp"
+        android:ellipsize="marquee"
+        android:clickable="true"
+        />
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
