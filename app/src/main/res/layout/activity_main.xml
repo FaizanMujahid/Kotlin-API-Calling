@@ -32,8 +32,8 @@
         android:id="@+id/btn1"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Cert"
-        app:layout_constraintWidth_percent="0.2"
+        android:text="1"
+        app:layout_constraintWidth_percent="0.15"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -42,32 +42,42 @@
         android:id="@+id/btn2"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Enr"
-        app:layout_constraintWidth_percent="0.2"
+        android:text="2"
+        app:layout_constraintWidth_percent="0.15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn1" />
     <Button
         android:id="@+id/btn3"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Pre-Enrol"
+        android:text="4"
         app:layout_constraintWidth_default="wrap"
-        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintWidth_percent="0.15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn2" />
     <Button
         android:id="@+id/btn4"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:text="Dev"
-        app:layout_constraintWidth_percent="0.2"
+        android:text="3"
+        app:layout_constraintWidth_percent="0.15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn3" />
     <Button
         android:id="@+id/btn5"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:text="Ses"
+        android:text="5"
+        app:layout_constraintWidth_percent="0.15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn4" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:text="6"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
