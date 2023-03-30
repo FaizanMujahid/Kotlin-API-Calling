@@ -68,6 +68,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    moveToNextScreen(
+                        Gson().toJson(sessionTokenModel).toString(),
+                        "Success : 200",
+                        "GetSessionTokenRetrofitCall "
+                    )
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
@@ -98,6 +103,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    moveToNextScreen(
+                        Gson().toJson(preEnrollRequestMessage).toString(),
+                        "Success : 200",
+                        "GetPreEnrollRetrofitCall "
+                    )
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
@@ -130,6 +140,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    moveToNextScreen(
+                        Gson().toJson(enrolleModel).toString(),
+                        "Success : 200",
+                        "GetEnrollRetrofitCall "
+                    )
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
@@ -184,8 +199,8 @@ class MainActivity : AppCompatActivity() {
             try {
                 var TokenList: ArrayList<Int> = arrayListOf(101,121,74,104,98,71,99,105,79,105,74,83,85,122,85,120,77,105,73,115,73,110,82,53,99,67,73,54,73,107,112,88,86,67,74,57,46,101,121,74,117,89,87,49,108,97,87,81,105,79,105,73,49,90,109,90,106,90,87,85,48,77,105,48,50,90,68,85,50,76,84,82,108,78,71,73,116,89,84,90,106,89,83,49,108,78,109,70,106,89,84,81,53,90,109,85,119,90,84,81,105,76,67,74,117,89,109,89,105,79,106,69,50,79,68,65,119,77,106,103,51,78,122,103,115,73,109,86,52,99,67,73,54,77,84,89,52,77,68,69,120,78,84,69,51,79,67,119,105,97,87,70,48,73,106,111,120,78,106,103,119,77,68,73,52,78,122,99,52,102,81,46,111,105,75,53,115,90,85,82,118,85,85,87,72,74,109,53,119,81,106,108,100,72,111,104,89,116,49,121,77,83,97,97,81,100,56,115,83,74,110,109,102,87,77,80,99,122,76,116,115,101,103,84,53,69,68,77,122,80,53,95,107,73,102,66,88,55,67,104,73,102,121,102,83,115,66,72,117,104,81,115,112,118,70,104,95,71,118,85,82,89,73,80,112,85,116,69,83,118,120,83,102,88,119,99,53,113,48,56,122,104,65,117,111,80,116,121,103,83,112,54,56,71,51,81,109,106,109,122,111,101,101,75,120,89,82,69,48,88,75,49,70,79,79,100,67,120,74,117,52,95,117,107,48,120,76,118,51,98,54,68,54,84,114,73,76,66,103,72,101,115,45,118,55,74,87,98,54,111,72,88,106,113,119,79,72,101,78,68,72,112,86,121,74,109,84,121,122,97,114,74,114,113,113,81,107,74,82,71,106,102,101,57,100,82,84,69,113,81,117,116,77,54,73,80,122,50,73,65,86,69,69,75,120,80,122,120,89,110,98,73,56,99,90,104,80,65,66,78,106,117,73,55,79,121,102,53,48,55,73,72,82,67,116,67,95,113,69,48,114,82,109,103,110,73,88,69,80,65,65,83,106,101,107,88,98,67,70,100,45,109,105,115,103,50,85,118,95,45,89,67,87,103,55,71,66,70,112,50,75,102,82,79,80,97,72,104,57,114,120,65,50,50,52,84,71,101,95,72,68,106,111,72,66,89,78,82,67,68,54,70,53,119)
                 val updateDeviceInfoMessage = UpdateDeviceInfoMessage("\\u003cdevice-info version\\u003d\\\"1.0\\",TokenList)
-                val sessionHanldeModel = UpdateDeviceInfoHanldeModel(updateDeviceInfoMessage)
-                val response = apiInterface.updateDeviceInfoXmlAPICalling(sessionHanldeModel)
+                val updateDeviceInfoHanldeModel = UpdateDeviceInfoHanldeModel(updateDeviceInfoMessage)
+                val response = apiInterface.updateDeviceInfoXmlAPICalling(updateDeviceInfoHanldeModel)
                 if (response.isSuccessful()) {
                     //your code for handaling success response
                     Toast.makeText(
@@ -194,6 +209,12 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    moveToNextScreen(
+                        Gson().toJson(updateDeviceInfoHanldeModel).toString(),
+                        "Success : 200",
+                        "UpdateDeviceInfoXmlRetrofitCall"
+                    )
+
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
@@ -515,7 +536,13 @@ class MainActivity : AppCompatActivity() {
                         response.toString(),
                         Toast.LENGTH_LONG
                     ).show()
-                } else {
+                } else
+                {
+                    moveToNextScreen(
+                        Gson().toJson(sessionHanldeModel).toString(),
+                        "Success : 200",
+                        "SessionHandleRetrofitCall"
+                    )
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
