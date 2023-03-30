@@ -16,6 +16,7 @@ import com.android.volley.toolbox.Volley
 import com.example.kotlin_api_calling.RequestModels.*
 import com.example.kotlin_api_calling.ResponseModels.PreEnrollMessage
 import com.example.kotlin_api_calling.ResponseModels.UserModel
+import com.google.gson.Gson
 import org.json.JSONException
 import java.nio.charset.Charset
 
@@ -147,8 +148,8 @@ class MainActivity : AppCompatActivity() {
         var apiInterface = retrofit.create(ApiInterface::class.java)
         lifecycleScope.launchWhenCreated {
             try {
-                val updateDeviceInfoMessage = GetCertRequestMessage(1)
-                val getCertModel = GetCertModel(updateDeviceInfoMessage,0,0)
+                val getCertRequestMessage = GetCertRequestMessage(1)
+                val getCertModel = GetCertModel(getCertRequestMessage,0,0)
                 val response = apiInterface.getCertAPICalling(getCertModel)
                 if (response.isSuccessful()) {
                     //your code for handaling success response
@@ -158,6 +159,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 } else {
+                    moveToNextScreen(
+                        Gson().toJson(getCertModel).toString(),
+                        "Success : 200",
+                        "GetCertRetrofitCall "
+                    )
                     Toast.makeText(
                         this@MainActivity,
                         response.errorBody().toString(),
